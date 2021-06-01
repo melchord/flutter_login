@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sign_button/sign_button.dart';
 
 class Login extends StatefulWidget {
   Login({Key? key}) : super (key: key);
@@ -116,6 +117,37 @@ class _LoginState extends State<Login> {
                     ),
                   )
                 ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  foregroundColor: MaterialStateProperty.all(Theme.of(context).primaryColor),
+                  backgroundColor: MaterialStateProperty.all(Theme.of(context).accentColor),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                    side: BorderSide(color: Colors.transparent)
+                    ),
+                  ),
+                  minimumSize: MaterialStateProperty.all<Size>(
+                    Size(double.infinity, 50)
+                  ),
+                  textStyle: MaterialStateProperty.all(Theme.of(context).textTheme.bodyText1)
+                ),
+                onPressed: () {},
+                child: Text('Sign in with Email',),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 15),
+              child: SignInButton(
+                buttonType: ButtonType.google,
+                btnText: 'Sign in with Google',
+                onPressed: () {},
+                buttonSize: ButtonSize.medium,
+                width: double.infinity,
               ),
             ),
           ],
